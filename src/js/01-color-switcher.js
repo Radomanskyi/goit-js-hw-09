@@ -6,9 +6,11 @@ function getRandomHexColor() {
   const buttonStart = document.querySelector(".js-button-start");
   const buttonStop = document.querySelector(".js-button-stop");
   let colorSwitcher = null;
+  buttonStop.disabled = true;
 
   buttonStart.addEventListener("click", () => {
     buttonStart.disabled = true;
+    buttonStop.disabled = false;
     colorSwitcher = setInterval(() => {
     const color = getRandomHexColor();
     document.body.style.backgroundColor = color;
@@ -18,4 +20,5 @@ function getRandomHexColor() {
   buttonStop.addEventListener("click", () => {
     clearInterval(colorSwitcher);
     buttonStart.disabled = false;
+    buttonStop.disabled = true;
   });

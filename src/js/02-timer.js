@@ -53,7 +53,7 @@ function onStartButton() {
   let timeRenains = userDate - dateToday;
 
   timeOut = setInterval(() => {
-    if (timeRenains < 0) {
+    if (timeRenains <= 0) {
       clearInterval(timeOut);
     }
     secondsRemains.textContent = addLeadingZero(
